@@ -1,0 +1,20 @@
+{
+  "name": "space-shooter-game-with-phaser",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "author": "James Chiu <jamesluckydev@gmail.com>",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1",
+    "vite": "^5.4.1"
+  },
+  "dependencies": {
+    "phaser": "^3.85.1"
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Street Fighters</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <meta name="description"
+        content="Juega a Street Fighters en tu navegador con gráficos impresionantes y un botón de inicio fácil de usar.">
+    <style>
+       
+    </style>
+
+</head>
+
+<body>
+    <div id="characterSelect">
+        <div class="character2"><img src="/assets/stages/playerselect.png"></div>
+        <div class="selected-character2">
+
+            <div>
+                <div id="player1Name" class="character-name"></div> <!-- Aquí se mostrará el nombre del Player 1 -->
+                <div id="player1Character" class="selected-character"></div>
+
+            </div>
+            <div class="character1"><img src="/assets/stages/vs.png"></div>
+            <div>
+                <div id="player2Name" class="character-name"></div> <!-- Aquí se mostrará el nombre del Player 2 -->
+                <div id="player2Character" class="selected-character"></div>
+
+            </div>
+
+        </div>
+
+        <div class="select">
+
+            <div class="character" data-player="1" data-character="ryu"><img src="/assets/char/ryu/ryu-big.png"
+                    alt="Ryu"></div>
+            <div class="character" data-player="1" data-character="ken"><img
+                    src="/assets/char/ken/ken-big.png" alt="Ken"></div>
+            <div class="character" data-player="1" data-character="akuma"><img
+                    src="/assets/char/akuma/akuma-big.png" alt="Akuma"></div>
+            <div class="character" data-player="1" data-character="chun"><img
+                    src="/assets/char/chun/chun-big.png" alt="Chun-Li"></div>
+            <div class="character" data-player="1" data-character="blanka"><img
+                    src="/assets/char/blanka/blanka-big.png" alt="Blanka"></div>
+            <div class="character" data-player="1" data-character="iori"><img
+                    src="/assets/char/iori/iori-big.png" alt="Iori"></div>
+            <div class="character" data-player="1" data-character="terry"><img
+                    src="/assets/char/terry/terry-big.png" alt="Terry"></div>
+                    
+        </div>
+
+        <div class="select">
+
+            <div class="character" data-player="2" data-character="ryu"><img src="/assets/char/ryu/ryu-big.png"
+                    alt="Ryu"></div>
+            <div class="character" data-player="2" data-character="ken"><img
+                    src="/assets/char/ken/ken-big.png" alt="Ken"></div>
+            <div class="character" data-player="2" data-character="akuma"><img
+                    src="/assets/char/akuma/akuma-big.png" alt="Akuma"></div>
+            <div class="character" data-player="2" data-character="chun"><img
+                    src="/assets/char/chun/chun-big.png" alt="Chun-Li"></div>
+            <div class="character" data-player="2" data-character="blanka"><img
+                    src="/assets/char/blanka/blanka-big.png" alt="Blanka"></div>
+            <div class="character" data-player="2" data-character="iori"><img
+                    src="/assets/char/iori/iori-big.png" alt="Iori"></div>
+            <div class="character" data-player="2" data-character="terry"><img
+                    src="/assets/char/terry/terry-big.png" alt="Terry"></div>
+                   
+        </div>
+
+        <button id="confirmButton">Confirmar Selección</button>
+    </div>
+
+    <div id="sfvjs"></div>
+
+    <button id="startButton" aria-label="Iniciar Juego">
+        <span>Click!</span>
+        <span>OPTIONS</span>
+    </button>
+    <button id="startButton2" aria-label="Iniciar Juego">
+
+        <span>P1 VS P2</span>
+    </button>
+
+
+</body>
+
+</html>

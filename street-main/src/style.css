@@ -1,0 +1,298 @@
+body {
+    background: url('/assets/stages/intro/bg6.png') no-repeat center center fixed;
+    background-size: cover;
+    background-color: #ffffff;
+    margin: 0;
+    overflow: hidden;
+    /* Cambiado a hidden para evitar scroll innecesario */
+    font-family: Arial, sans-serif;
+}
+
+.titles {
+    font-weight: bold;
+    color: #ffffff;
+    margin: 0%;
+    padding: 0%;
+}
+
+#startButton,
+#startButton2 {
+font-weight: bold;
+background: linear-gradient(45deg, #ff004c, #1900ff);
+display: flex;
+justify-content: center;
+align-items: center;
+position: fixed;
+right: 50%;
+border: 2px solid #fff;
+border-radius: 10px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.8), inset 0 0 5px rgba(255, 255, 255, 0.5);
+text-transform: uppercase;
+letter-spacing: 2px;
+text-shadow: 2px 2px 0px #000;
+cursor: pointer;
+transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+#startButton {
+bottom: 20%;
+transform: translate(50%, 50%);
+width: 150px;
+height: 45px;
+display: none;
+}
+
+#startButton2 {
+bottom: 10%;
+transform: translate(50%, 50%);
+width: 150px;
+height: 45px;
+}
+
+#startButton:hover,
+#startButton2:hover {
+transform: translate(50%, 50%) scale(1.05);
+box-shadow: 0 0 30px rgba(255, 255, 255, 0.9), inset 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+#startButton:active,
+#startButton2:active {
+transform: translate(50%, 50%) scale(0.95);
+box-shadow: 0 0 20px rgba(0, 0, 0, 1), inset 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+#startButton span,
+#startButton2 span {
+display: block;
+position: relative;
+width: 100%;
+height: 100%;
+text-align: center;
+line-height: 45px;
+color: #fff;
+}
+#confirmButton {
+font-family: 'Press Start 2P', cursive; /* Fuente de estilo retro */
+font-size: 16px;
+color: #fff;
+background: linear-gradient(180deg, #ff004d 0%, #ff3366 100%);
+border: 3px solid #fff;
+border-radius: 50px;
+padding: 5px 15px;
+text-transform: uppercase;
+box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5), 0px 2px 5px rgba(255, 0, 0, 0.75);
+letter-spacing: 2px;
+transition: transform 0.1s ease, box-shadow 0.1s ease;
+position: relative;
+overflow: hidden;
+z-index: 1;
+}
+
+#confirmButton:before {
+content: '';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 150%;
+background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.4) 50%, transparent 70%);
+transform: rotate(45deg);
+transition: all 0.3s ease;
+z-index: -1;
+}
+
+#confirmButton:hover:before {
+top: -30%;
+left: -30%;
+}
+
+#confirmButton:active {
+transform: translateY(2px);
+box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5), 0px 1px 2px rgba(255, 0, 0, 0.75);
+}
+
+#confirmButton:focus {
+outline: none;
+}
+#characterSelect {
+    display: none;
+
+    background:transparent;
+    padding: 0px;
+height: 100%;
+    text-align: center;
+    width: 100%;
+}
+
+/* Estilo inicial */
+.character {
+    display: block;
+
+    cursor: pointer;
+}
+
+/* Estilo de la imagen del personaje */
+.character img {
+    width: 70px;
+    height: 70px;
+    border: 2px solid rgb(213, 213, 213);
+
+    transition: border-color 0.3s ease;
+    /* Suaviza la transición del borde */
+    margin: 0%;
+    transform: skew(-10deg);
+
+}
+.selected-character img {
+width: 100%;
+height: 100%;
+object-fit: cover; /* Asegura que la imagen se ajuste bien al contenedor */
+transform: skew(20deg); /* Compensa la inclinación del contenedor */
+}
+/* Animación de parpadeo en colores */
+@keyframes blinkBorder {
+    0% {
+        border-color: red;
+    }
+
+    33% {
+        border-color: yellow;
+    }
+
+    66% {
+        border-color: blue;
+    }
+
+    100% {
+        border-color: red;
+    }
+}
+
+/* Aplicar la animación al pasar el mouse */
+.character:hover img {
+    animation: blinkBorder 1s infinite;
+}
+
+/* Borde rojo al seleccionar */
+.character.selected img {
+
+    border-color: red;
+    animation: none;
+    /* Detiene la animación si se selecciona */
+}
+
+.character1 {
+    display: inline-block;
+margin-top: 1%;
+    cursor: pointer;
+}
+
+.character1 img {
+    width: 60px;
+    height: 60px;
+    border: none;
+
+}
+
+.character2 {
+    display: flex;
+
+    cursor: pointer;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.character2 img {
+    width: 450px;
+    height: 100px;
+    border: none;
+
+}
+
+#selectedCharacters {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+
+}
+
+.selected-character {
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+
+    background-size: cover;
+padding: auto;
+transform: skew(-0deg); /* Ángulo para crear el paralelogramo */
+overflow: hidden; /* Ocultar cualquier parte de la imagen que salga del contenedor */
+}
+
+.selected-character2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    gap: 10px;
+
+
+}
+
+.character-name {
+    text-align: center;
+    color: rgb(255, 221, 0);
+    font-weight: bold;
+    margin-bottom: 2%;
+    font-size: 1.2em;
+    text-shadow: 
+        -1px -1px 0 rgba(117, 2, 96, 0.937), /* sombra hacia la esquina superior izquierda */
+        1px -1px 0 rgba(115, 5, 95, 0.937),  /* sombra hacia la esquina superior derecha */
+        -1px 1px 0 rgba(255, 6, 209, 0.937),  /* sombra hacia la esquina inferior izquierda */
+        1px 1px 0 rgba(126, 3, 104, 0.937);   /* sombra hacia la esquina inferior derecha */
+}
+
+#h2 {
+    margin: 0%;
+    padding: 0%;
+    
+}
+
+.select {
+    margin: 1%;
+    padding: 0%;
+    display: flex;
+
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+}
+
+@media (max-width: 600px) {
+
+    #startButton,
+    #startButton2 {
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        transform: translate(50%, 50%);
+    }
+
+    #startButton span,
+    #startButton2 span {
+        font-size: 14px;
+    }
+
+    .character img {
+        width: 50px;
+        height: 50px;
+    }
+}
